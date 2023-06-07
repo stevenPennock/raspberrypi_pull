@@ -1,0 +1,83 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <xacro:macro name="open_manipulator_x_ros2_control" params="name">
+
+    <ros2_control name="servo's" type="system">
+      <hardware>
+        <plugin>dynamixel_hardware/DynamixelHardware</plugin>
+        <param name="usb_port">/dev/ttyUSB0</param>
+        <param name="baud_rate">1000000</param>
+        <!-- <param name="use_dummy">true</param> -->
+      </hardware>
+
+      <joint name="rf_joint">
+        <param name="id">11</param>
+        <command_interface name="position"/>
+        <command_interface name="velocity"/>
+        <command_interface name="torque_limit"/>
+        <state_interface name="position"/>
+        <state_interface name="temperature"/>
+        <state_interface name="load"/>
+        <state_interface name="voltage"/>
+      </joint>
+
+      <joint name="lf_joint">
+        <param name="id">12</param>
+        <command_interface name="position"/>
+        <command_interface name="velocity"/>
+        <command_interface name="torque_limit"/>
+        <state_interface name="position"/>
+        <state_interface name="temperature"/>
+        <state_interface name="load"/>
+        <state_interface name="voltage"/>
+      </joint>
+
+       <joint name="rb_joint">
+        <param name="id">13</param>
+        <command_interface name="position"/>
+        <command_interface name="velocity"/>
+        <command_interface name="torque_limit"/>
+        <state_interface name="position"/>
+        <state_interface name="temperature"/>
+        <state_interface name="load"/>
+        <state_interface name="voltage"/>
+      </joint>
+
+      <joint name="lb_joint">
+        <param name="id">14</param>
+        <command_interface name="position"/>
+        <command_interface name="velocity"/>
+        <command_interface name="torque_limit"/>
+        <state_interface name="position"/>
+        <state_interface name="temperature"/>
+        <state_interface name="load"/>
+        <state_interface name="voltage"/>
+      </joint>
+
+      <joint name="z_joint">
+        <param name="id">10</param>
+        <command_interface name="position"/>
+        <command_interface name="velocity"/>
+        <command_interface name="torque_limit"/>
+        <state_interface name="position"/>
+        <state_interface name="temperature"/>
+        <state_interface name="load"/>
+        <state_interface name="voltage"/>
+      </joint>
+
+      <joint name="gripper_joint">
+        <param name="id">16</param>
+        <command_interface name="position"/>
+        <command_interface name="velocity"/>
+        <command_interface name="torque_limit"/>
+        <state_interface name="position"/>
+        <state_interface name="temperature"/>
+        <state_interface name="load"/>
+        <state_interface name="voltage"/>
+      </joint>
+    </ros2_control>
+
+  </xacro:macro>
+
+</robot>
